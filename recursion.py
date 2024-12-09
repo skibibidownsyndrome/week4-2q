@@ -26,11 +26,11 @@ def koch(sideLength,level):
 
 
 def snowflake(sideLength,level):
-    for n in range (4):
+    for n in range (12):
         koch(sideLength,level)
-        tommy.right(90)
+        tommy.right(30)
 
 #test
 tommy.pensize(1)
-snowflake(300,4)
+snowflake(100,3)
 turtle.done()
