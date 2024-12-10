@@ -23,14 +23,36 @@ def koch(sideLength,level):
     else:
         tommy.forward(sideLength)
 
-
-
 def snowflake(sideLength,level):
-    for n in range (12):
+    for n in range (6):
         koch(sideLength,level)
-        tommy.right(30)
+        tommy.right(-60)
+
+
+def snowflakeInverted(sideLength,level):
+    for n in range (3):
+        koch(sideLength,level)
+        tommy.left(120)
+
 
 #test
+from random import *
+tommy = turtle.Turtle()
+tommy.speed(0)
 tommy.pensize(1)
-snowflake(100,3)
+turtle.tracer(100)
+tommy.hideturtle()
+
+
+tommy.color('blue')
+tommy.begin_fill()
+snowflake(200,7)
+tommy.end_fill()
+tommy.penup()
+tommy.goto(-50,88)
+tommy.color('red')
+tommy.begin_fill()
+snowflakeInverted(300,7)
+tommy.end_fill()
+turtle.update()
 turtle.done()
